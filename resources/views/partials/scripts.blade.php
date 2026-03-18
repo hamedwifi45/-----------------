@@ -1,0 +1,2 @@
+@fluxScripts
+@stack('scripts')

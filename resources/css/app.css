@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Tajawal', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  
+    --color-primary-50: #ecfdf5;
+    --color-primary-100: #d1fae5;
+    --color-primary-200: #a7f3d0;
+    --color-primary-300: #6ee7b7;
+    --color-primary-400: #34d399;
+    --color-primary-500: #10b981;
+    --color-primary-600: #059669;
+    --color-primary-700: #047857;
+    --color-primary-800: #065f46;
+    --color-primary-900: #064e3b;
+
+    --color-secondary-500: #3b82f6;
+    --color-secondary-600: #2563eb;
+
+    --color-accent-500: #f59e0b;
+    --color-accent-600: #d97706;
+
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    --color-gray-950: #030712;
+
+ 
+    --color-accent: var(--color-lime-400);
+    --color-accent-content: var(--color-lime-600);
+    --color-accent-foreground: var(--color-lime-900);
+
+    --animation-float: float 20s infinite;
+    --animation-pulse-slow: pulse 3s ease-in-out infinite;
+    --animation-spin-slow: spin 30s linear infinite;
+    --animation-fade-in: fadeIn 0.4s ease;
+    --animation-slide-in: slideIn 0.4s ease;
+    --animation-modal-in: modalIn 0.3s ease;
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(30px, -30px) rotate(90deg); }
+        50% { transform: translate(-20px, 20px) rotate(180deg); }
+        75% { transform: translate(20px, 30px) rotate(270deg); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes modalIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-lime-400);
+        --color-accent-content: var(--color-lime-400);
+        --color-accent-foreground: var(--color-lime-950);
+        
+        --color-gray-200: var(--color-gray-700); 
+    }
+}
+@layer base {
+    body {
+        @apply font-sans bg-gray-50 text-gray-900 antialiased;
+        direction: rtl; /* فرض الاتجاه العربي */
+        text-align: right;
+    }
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2 text-right;
+}
+
+[data-flux-label] {
+    @apply !mb-0 !leading-tight font-medium text-gray-700;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+}
+
