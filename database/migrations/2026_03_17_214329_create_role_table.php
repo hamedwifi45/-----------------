@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
+            $table->string('name'); // مثال: finance_manager, content_moderator
+            $table->string('display_name'); // مثال: مدير مالي، مراقب محتوى
+            $table->text('description')->nullable();
+            $table->boolean('is_system')->default(false); // أدوار نظام لا تحذف
             $table->timestamps();
         });
     }

@@ -27,8 +27,6 @@ return new class extends Migration
             // الموقع الجغرافي
             $table->string('country');
             $table->string('city')->nullable();
-            $table->string('timezone')->default('UTC');
-            $table->string('language')->default('ar');
             
             // معلومات التواصل (عامة)
             $table->string('phone_public')->nullable(); // رقم ظاهر للعامة (اختياري)

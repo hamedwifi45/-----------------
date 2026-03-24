@@ -241,7 +241,7 @@
                     </a>
                     <a href="register.html" class="px-6 py-2.5 bg-gradient-primary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary-500/30 hover:-translate-y-0.5 transition-all duration-300">
                         حساب جديد
-                    </a>
+                    </a>ح
                 </div>
                 
                 <!-- Mobile Menu Button -->
